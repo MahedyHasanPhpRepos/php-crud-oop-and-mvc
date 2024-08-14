@@ -1,32 +1,66 @@
+
 <?php
-
-
+    include('./common/header.php') ; 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="./styles/style.css">
-</head>
+<?php
+    include_once('./CrudAction.php');
 
-<body>
+    $ca = new CrudAction(new DbConfig()) ; 
+    $users = $ca->getUsers() ; 
+
+    echo $users ; 
+    
+?>
 
 
-    <div>
-        <h2>hello </h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-lg-6 mx-auto mt-3">
+            <div class="text-center">
+                <h2> All Users</h2>
+            </div>
+            <div class="text-end my-2">
+                <button class="btn btn-success text-capitalize">
+                    add user
+                </button>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-success table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name </th>
+                            <th>Age </th>
+                            <th>Email </th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td class="text-center"><a href="#">edit</a> | <a href="#">delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td class="text-center"><a href="#">edit</a> | <a href="#">delete</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
+</div>
 
 
 
+<?php
+    include('./common/footer.php') ;
+?>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-</body>
-
-</html>
