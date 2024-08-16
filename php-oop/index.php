@@ -42,7 +42,11 @@ $users = $crud->read();
                                     </td>
                                     <td><?php echo $user['age'] ?></td>
                                     <td><?php echo $user['email'] ?></td>
-                                    <td class="text-center"><a href="update.php?id=<?php echo $user['id']; ?>">edit</a> | <a href="#">delete</a></td>
+                                    <td class="text-center">
+                                        <a href="update.php?id=<?php echo $user['id']; ?>">edit</a>
+                                        |
+                                        <a href="delete.php?id=<?php echo $user['id']; ?>" name="delete">delete</a>
+                                    </td>
                                 </tr>
                             <?php endforeach; ?>
 
